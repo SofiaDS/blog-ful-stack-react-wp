@@ -5,13 +5,13 @@ import Home from "../Home/home.js";
 import Error from "../Error/error.js";
 import About from "../About/about.js";
 import ReactSection from "../React/react.js";
+import Wp from "../Wp/wp.js";
 
 export default class Header extends React.Component {
   render() {
     return (
       <div className="container-fluid">
         <img></img>
-        <h3>Hi Hi im the header</h3>
         <BrowserRouter>
           <nav>
             <Link to="/">
@@ -27,7 +27,7 @@ export default class Header extends React.Component {
               React
             </Link>
             <Link to="/wp">
-              {App}
+              { Wp }
               wp
             </Link>
           </nav>
@@ -40,10 +40,10 @@ export default class Header extends React.Component {
               <About />
             </Route>
             <Route path="/react">
-              <React />
+              <ReactSection />
             </Route>
             <Route path="/wp">
-              <WordPress />
+              <Wp />
             </Route>
             <Route path="*">
               <Error />

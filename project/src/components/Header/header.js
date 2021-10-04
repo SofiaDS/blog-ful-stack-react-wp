@@ -4,6 +4,7 @@ import App from "../../App.js";
 import Home from "../Home/home.js";
 import Error from "../Error/error.js";
 import About from "../About/about.js";
+import ReactSection from "../React/react.js";
 
 export default class Header extends React.Component {
   render() {
@@ -22,7 +23,7 @@ export default class Header extends React.Component {
               About us
             </Link>
             <Link to="/react">
-              { App }
+              { ReactSection }
               React
             </Link>
             <Link to="/wp">
@@ -38,8 +39,11 @@ export default class Header extends React.Component {
             <Route path="/about-us">
               <About />
             </Route>
-            <Route path="/users/:id">
-              <App />
+            <Route path="/react">
+              <React />
+            </Route>
+            <Route path="/wp">
+              <WordPress />
             </Route>
             <Route path="*">
               <Error />

@@ -5,8 +5,12 @@ body{
 }
 .cont{
   margin: 3rem;
+  border:1px solid black;
 }
 a{
   text-decoration: none;
   color: black;
+}
+span{
+  margin: 0.5rem
 }

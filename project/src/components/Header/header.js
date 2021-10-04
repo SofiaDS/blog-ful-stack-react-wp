@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Link, Route, Switch } from "react-router";
 
 export default class Header extends React.Component {
     render() {
@@ -13,13 +14,13 @@ export default class Header extends React.Component {
                 <a href="#">Home</a>
               </span>
               <span>
-                <a href="#"> Us</a>
+                <a href="#">Us</a>
               </span>
               <span>
-                <a href="#"> React</a>
+                <a href="#">React</a>
               </span>
               <span>
-                <a href="#"> WordPress</a>
+                <a href="#">WordPress</a>
               </span>
             </nav>
         </div>

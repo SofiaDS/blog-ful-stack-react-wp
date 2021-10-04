@@ -1,10 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-
+html{
+  font-size:14px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
 body {
-  background-color: #ffc107;
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,191,0,1) 100%);
 }
 .cont {
-  margin: 3rem;
+  margin: 5rem;
   box-shadow: 0px 0px 14px 3px #0000007a;
   z-index: 3;
 }
@@ -22,7 +26,7 @@ nav > a {
 }
 .img {
   height: 100px;
-  width: 200px;
+  width: 150px;
 }
 .flex-parent {
   display: flex;
@@ -50,6 +54,7 @@ footer {
   padding: 1rem 0rem;
   margin-top: 1rem;
   border-top: 1px solid black;
+  text-align: center;
 }
 address {
   text-align: center;
@@ -59,7 +64,7 @@ address > div {
   cursor: pointer;
 }
 .logo {
-  height: 100px;
+  height: 80px;
 }
 .social {
   font-size: 1.2rem;
@@ -69,4 +74,9 @@ address > div {
   margin-top:0.5rem;
   cursor: pointer;
   margin-right: 1rem;
+}
+.copyright{
+  padding-top:1.7rem;
+  margin-top:2rem;
+  font-size:0.6rem;
 }

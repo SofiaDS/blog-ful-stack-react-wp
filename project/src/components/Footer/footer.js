@@ -45,6 +45,7 @@ export default class Footer extends React.Component {
             </span>
           </div>
         </address>
+        <div className="copyright">&#169;copyright. All rights reserved.</div>
       </footer>
     );
   }

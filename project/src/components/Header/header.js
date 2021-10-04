@@ -5,14 +5,15 @@ import Error from "../Error/error.js";
 import About from "../About/about.js";
 import ReactSection from "../React/react.js";
 import Wp from "../Wp/wp.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Header extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <img></img>
         <BrowserRouter>
           <nav>
+            <img src="images/logo.png" className="logoHome"></img>
             <Link to="/">
               { Home }
               Home

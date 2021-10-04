@@ -7,6 +7,6 @@ export default class Home extends React.Component {
       <div className="home">
         <ArticleCom />
       </div>
-    )
+    );
   }
 }

@@ -1,7 +1,7 @@
-import './App.css';
-import Footer from './components/Footer/footer.js';
-import Header from './components/Header/header.js';
-import 'bootstrap/dist/js/bootstrap.bundle';
+import "./App.css";
+import Footer from "./components/Footer/footer.js";
+import Header from "./components/Header/header.js";
+import "bootstrap/dist/js/bootstrap.bundle";
 
 function App() {
   return (

@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import App from "../../App.js";
+import Home from "../Home/home.js";
 import Error from "../Error/error.js";
+import About from "../About/about.js";
 
 export default class Header extends React.Component {
   render() {
@@ -12,15 +14,15 @@ export default class Header extends React.Component {
         <BrowserRouter>
           <nav>
             <Link to="/">
-              {App}
+              { Home }
               Home
             </Link>
             <Link to="/about-us">
-              {App}
+              { About }
               About us
             </Link>
             <Link to="/react">
-              {App}
+              { App }
               React
             </Link>
             <Link to="/wp">
@@ -29,12 +31,12 @@ export default class Header extends React.Component {
             </Link>
           </nav>
 
-          <Switch>
+            <Switch>
             <Route path="/" exact>
-              <App />
+              <Home />
             </Route>
-            <Route path="/add-user">
-              <App />
+            <Route path="/about-us">
+              <About />
             </Route>
             <Route path="/users/:id">
               <App />
@@ -42,7 +44,7 @@ export default class Header extends React.Component {
             <Route path="*">
               <Error />
             </Route>
-          </Switch>
+          </Switch> 
         </BrowserRouter>
       </div>
     );

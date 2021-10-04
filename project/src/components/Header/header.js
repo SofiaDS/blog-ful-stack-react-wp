@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
-import App from "../../App.js";
 import Home from "../Home/home.js";
 import Error from "../Error/error.js";
 import About from "../About/about.js";

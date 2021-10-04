@@ -1,13 +1,15 @@
 import './App.css';
 import Footer from './components/Footer/footer.js';
 import Header from './components/Header/header.js';
-import { BrowserRouter, Link, Route, Switch } from "react-router";
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
   return (
-    <div className="cont">
-      <Header />
-      <Footer />
+    <div>
+      <div className="cont">
+        <Header />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -19,3 +19,7 @@ nav > a{
   padding-right: 0.3rem;
   border-right: 1px solid black;
 }
+.img{
+  height:100px;
+  width:200px;
+}

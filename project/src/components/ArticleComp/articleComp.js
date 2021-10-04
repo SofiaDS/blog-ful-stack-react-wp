@@ -23,9 +23,7 @@ export default class ArticleCom extends React.Component {
   render() {
     const card = this.state.articles.map((article) => (
       <div className="card flex-child shadow" key= { article.id }>
-          <div className="img">
-            { article.img }
-          </div>
+          <img src ={ article.img } className="img"></img>
           <div className="title">
             { article.title }
           </div>

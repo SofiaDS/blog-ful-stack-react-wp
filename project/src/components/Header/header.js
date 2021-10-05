@@ -10,29 +10,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class Header extends React.Component {
   render() {
     return (
-      <div className="container-fluid">
-        <BrowserRouter>
-          <nav>
+      <BrowserRouter>
+        <div className="container-fluid">
+          <nav className="navbar navbar expand-expand-lg">
             <img src="images/logo.png" className="logoHome"></img>
             <Link to="/">
-              { Home }
+              {Home}
               Home
             </Link>
             <Link to="/about-us">
-              { About }
+              {About}
               About us
             </Link>
             <Link to="/react">
-              { ReactSection }
+              {ReactSection}
               React
             </Link>
             <Link to="/wp">
-              { Wp }
+              {Wp}
               wp
             </Link>
           </nav>
 
-            <Switch>
+          <Switch>
             <Route path="/" exact>
               <Home />
             </Route>
@@ -48,9 +48,9 @@ export default class Header extends React.Component {
             <Route path="*">
               <Error />
             </Route>
-          </Switch> 
-        </BrowserRouter>
-      </div>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

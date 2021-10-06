@@ -47,6 +47,9 @@ class DynSection extends React.Component {
         <div>{article.title}</div>
         <div>{article.cat}</div>
         <div>{article.content}</div>
+        <button type="button" className="btn btn-outline-dark">
+          <Link to={`/posts/${article.id}`}>Read More...</Link>
+        </button>
       </div>
     ));
     return <div> {cards}</div>;

@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
 import Home from "../Home/home.js";
 import Error from "../Error/error.js";
-import About from "../About/about.js";
-import ReactSection from "../React/react.js";
-import Wp from "../Wp/wp.js";
+import DynSection from "../Section/section.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor() {
     super();
 
@@ -21,8 +20,6 @@ export default class Header extends React.Component {
       .then((res) => res.json())
       .then((categories) => {
         this.setState({ cat: categories });
-        console.log(this.state.cat);
-        console.log(this.state.cat[0].id);
       });
   }
 
@@ -30,7 +27,6 @@ export default class Header extends React.Component {
     const category = this.state.cat.map((cat) => (
       <span key={cat.id}>
         <Link to={`/categories/${cat.id}`}>
-          { ReactSection }
           {cat.name}
         </Link>
       </span>
@@ -41,24 +37,17 @@ export default class Header extends React.Component {
           <nav className="navbar navbar expand-expand-lg">
             <img src="images/logo.png" className="logoHome"></img>
             <Link to="/">
-              {Home}
               Home
             </Link>
-            { category }
+            {category}
           </nav>
 
           <Switch>
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/about-us">
-              <About />
-            </Route>
-            <Route path="/react">
-              <ReactSection />
-            </Route>
-            <Route path="/wp">
-              <Wp />
+            <Route path="/categories/:id">
+              <DynSection />
             </Route>
             <Route path="*">
               <Error />
@@ -70,3 +59,4 @@ export default class Header extends React.Component {
     return <div>{navBar}</div>;
   }
 }
+export default withRouter(Header);

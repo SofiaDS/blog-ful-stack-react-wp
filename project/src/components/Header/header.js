@@ -7,8 +7,8 @@ import DynSection from "../Section/section.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Header extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       cat: [],
@@ -26,35 +26,28 @@ class Header extends React.Component {
   render() {
     const category = this.state.cat.map((cat) => (
       <span key={cat.id}>
-        <Link to={`/categories/${cat.id}`}>
-          {cat.name}
-        </Link>
+        <Link to={`/categories/${cat.id}`}>{cat.name}</Link>
       </span>
     ));
     const navBar = (
-      <BrowserRouter>
-        <div className="container-fluid">
-          <nav className="navbar navbar expand-expand-lg">
-            <img src="images/logo.png" className="logoHome"></img>
-            <Link to="/">
-              Home
-            </Link>
-            {category}
-          </nav>
-
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/categories/:id">
-              <DynSection />
-            </Route>
-            <Route path="*">
-              <Error />
-            </Route>
-          </Switch>
-        </div>
-      </BrowserRouter>
+      <div className="container-fluid">
+        <nav className="navbar navbar expand-expand-lg">
+          <img src="images/logo.png" className="logoHome"></img>
+          <Link to="/">Home</Link>
+          {category}
+        </nav>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/categories/:id">
+            <DynSection />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </div>
     );
     return <div>{navBar}</div>;
   }

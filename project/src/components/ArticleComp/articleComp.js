@@ -19,7 +19,8 @@ export default class ArticleCom extends React.Component {
           articles: articles.map((article) => objectToArt(article)),
         });
       });
-  }
+    }
+    
 
   render() {
     const card = this.state.articles.map((article) => (

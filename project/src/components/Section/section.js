@@ -1,27 +1,36 @@
 import React from "react";
+import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
+import { ArticleModel, objectToArt } from "../../models/articleModel.js";
 
-export default class DynSection extends React.Component {
+class DynSection extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cat: [],
+      catArt: [],
     };
   }
 
   componentDidMount() {
-    fetch(
-      `http://epicode.test/bedrock/web/wp-json/wp/v2/categories/${this.props.match.params.id}`
-    )
+    fetch(`http://epicode.test/bedrock/web/wp-json/wp/v2/posts?categories=${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((cats) => {
         this.setState({
-          cat: cats,
+          catArt: cats.map((art) => objectToArt(art))
         });
       });
   }
 
   render() {
-    return <div> ciao sono una sexione dinamica</div>;
+    const cards = this.state.catArt.map((article) => (
+      <div key={article.id}>
+        <div>{article.title}</div>
+        <div>{article.cat}</div>
+        <div>{article.content}</div>
+      </div>
+    ))
+    return <div> {cards}</div>;
   }
 }
+export default withRouter(DynSection);

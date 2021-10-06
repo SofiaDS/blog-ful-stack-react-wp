@@ -12,21 +12,30 @@ export default class Header extends React.Component {
     super();
 
     this.state = {
-      cat: []
-    }
+      cat: [],
+    };
   }
 
   componentDidMount() {
-    fetch('http://epicode.test/bedrock/web/wp-json/wp/v2/categories/')
+    fetch("http://epicode.test/bedrock/web/wp-json/wp/v2/categories/")
       .then((res) => res.json())
-        .then((categories) => {
-          this.setState({ cat: categories });
-        })
-
+      .then((categories) => {
+        this.setState({ cat: categories });
+        console.log(this.state.cat);
+        console.log(this.state.cat[0].id);
+      });
   }
 
   render() {
-    return (
+    const category = this.state.cat.map((cat) => (
+      <span key={cat.id}>
+        <Link to={`/categories/${cat.id}`}>
+          { ReactSection }
+          {cat.name}
+        </Link>
+      </span>
+    ));
+    const navBar = (
       <BrowserRouter>
         <div className="container-fluid">
           <nav className="navbar navbar expand-expand-lg">
@@ -35,18 +44,7 @@ export default class Header extends React.Component {
               {Home}
               Home
             </Link>
-            <Link to="/about-us">
-              {About}
-              About us
-            </Link>
-            <Link to="/react">
-              {ReactSection}
-              React
-            </Link>
-            <Link to="/wp">
-              {Wp}
-              wp
-            </Link>
+            { category }
           </nav>
 
           <Switch>
@@ -69,5 +67,6 @@ export default class Header extends React.Component {
         </div>
       </BrowserRouter>
     );
+    return <div>{navBar}</div>;
   }
 }

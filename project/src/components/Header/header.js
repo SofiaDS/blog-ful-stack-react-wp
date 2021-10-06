@@ -26,7 +26,7 @@ class Header extends React.Component {
   render() {
     const category = this.state.cat.map((cat) => (
       <span key={cat.id}>
-        <Link to={`/categories/${cat.id}`}>{cat.name}</Link>
+        <Link to={`/categories/${cat.id}/posts`}>{cat.name}</Link>
       </span>
     ));
     const navBar = (
@@ -40,7 +40,7 @@ class Header extends React.Component {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/categories/:id">
+          <Route path="/categories/:id/posts" >
             <DynSection />
           </Route>
           <Route path="*">

@@ -24,10 +24,9 @@ export default class ArticleCom extends React.Component {
 
   render() {
     const card = this.state.articles.map((article) => (
-      <div className="cards shadow" key={ article.id }>
+      <div className="cards " key={ article.id }>
         <img src={ article.img } className="img"></img>
         <div className="title">{ article.title }</div>
-        <div> { article.cat } </div>
         <div className="preview" dangerouslySetInnerHTML={{__html:article.content}} ></div>
         <button type="button" className="btn btn-outline-dark">
           <Link to="">Read More...</Link>

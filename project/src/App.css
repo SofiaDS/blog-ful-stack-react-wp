@@ -1,6 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 html{
-  font-size:14px;
+  font-size:12px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
 }
 body {
@@ -28,11 +28,30 @@ nav > a {
   flex-direction: row;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  margin-top: 3rem;
+  margin:3rem 5rem;
+  padding: 5rem;
 }
-.flex-child {
+.cards{
+  max-width:180px;
+  max-height: 350px;
+  background-color:rgba(255, 255, 255, 0.678);
   margin-bottom: 1rem;
   padding: 0.5rem;
+  overflow-y: scroll;
+  scrollbar-color: rgb(238, 238, 238) rgb(255, 5, 5);
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f10c; 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.089); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.308); 
 }
 .title {
   font-size: 2rem;
@@ -53,7 +72,7 @@ footer {
 }
 address {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 address > div {
   cursor: pointer;

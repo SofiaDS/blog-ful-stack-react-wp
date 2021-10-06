@@ -8,6 +8,23 @@ import Wp from "../Wp/wp.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Header extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      cat: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://epicode.test/bedrock/web/wp-json/wp/v2/categories/')
+      .then((res) => res.json())
+        .then((categories) => {
+          this.setState({ cat: categories });
+        })
+
+  }
+
   render() {
     return (
       <BrowserRouter>

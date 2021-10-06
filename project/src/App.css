@@ -1,11 +1,16 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-html{
-  font-size:12px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+html {
+  font-size: 12px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif !important;
 }
 body {
-  background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,191,0,1) 100%);
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 191, 0, 1) 100%
+  );
 }
 a {
   text-decoration: none;
@@ -28,13 +33,13 @@ nav > a {
   flex-direction: row;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  margin:3rem 5rem;
+  margin: 3rem 5rem;
   padding: 5rem;
 }
-.cards{
-  max-width:180px;
+.cards {
+  max-width: 180px;
   max-height: 350px;
-  background-color:rgba(255, 255, 255, 0.678);
+  background-color: rgba(255, 255, 255, 0.678);
   margin-bottom: 1rem;
   padding: 0.5rem;
   overflow-y: scroll;
@@ -45,13 +50,13 @@ nav > a {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f10c; 
+  background: #f1f1f10c;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.089); 
+  background: rgba(0, 0, 0, 0.089);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(85, 85, 85, 0.308); 
+  background: rgba(85, 85, 85, 0.308);
 }
 .title {
   font-size: 2rem;
@@ -83,14 +88,14 @@ address > div {
 .social {
   font-size: 1.2rem;
 }
-.logoHome{
+.logoHome {
   height: 50px;
-  margin-top:0.5rem;
+  margin-top: 0.5rem;
   cursor: pointer;
   margin-right: 1rem;
 }
-.copyright{
-  padding-top:1.7rem;
-  margin-top:2rem;
-  font-size:0.6rem;
+.copyright {
+  padding-top: 1.7rem;
+  margin-top: 2rem;
+  font-size: 0.6rem;
 }

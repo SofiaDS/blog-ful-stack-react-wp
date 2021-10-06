@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 import Home from "../Home/home.js";
 import Error from "../Error/error.js";
 import DynSection from "../Section/section.js";
+import ArtDetail from "../ArticleDetail/articleDetail.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Header extends React.Component {
@@ -40,8 +41,11 @@ class Header extends React.Component {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/categories/:id/posts" >
+          <Route path="/categories/:id/posts">
             <DynSection />
+          </Route>
+          <Route path="/posts/:id">
+            <ArtDetail />
           </Route>
           <Route path="*">
             <Error />

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArticleModel, objectToArt } from "../../models/articleModel.js";
+import { objectToArt } from "../../models/articleModel.js";
 import { Link } from "react-router-dom";
 
 export default class ArticleCom extends React.Component {
@@ -23,18 +23,16 @@ export default class ArticleCom extends React.Component {
 
   render() {
     const card = this.state.articles.map((article) => (
-      <div className="cards " key={article.id}>
-        <img src={article.img} className="img"></img>
-        <div className="title">{article.title}</div>
+      <div className="cards " key= { article.id } >
+        <div className="title"> { article.title } </div>
         <div
           className="preview"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        ></div>
+          dangerouslySetInnerHTML= {{ __html: article.content }} ></div>
         <button type="button" className="btn btn-outline-dark">
-          <Link to={`/posts/${article.id}`}>Read More...</Link>
+          <Link to= {`/posts/${article.id}`} >Read More...</Link>
         </button>
       </div>
     ));
-    return <div className="flex-parent">{card}</div>;
+    return <div className="flex-parent"> { card } </div>;
   }
 }

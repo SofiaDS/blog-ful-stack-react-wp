@@ -25,7 +25,6 @@ class Header extends React.Component {
       .then((categories) => {
         this.setState({ cat: categories });
       });
-    console.log(this.state.cat);
   }
 
   readPages() {
@@ -48,11 +47,13 @@ class Header extends React.Component {
         <Link to={`/categories/${cat.id}/posts`}>{cat.name}</Link>
       </span>
     ));
+
     const pages = this.state.pages.map((page) => (
       <span key={page.id}>
         <Link to={`/pages/${page.id}`}>{page.title}</Link>
       </span>
     ));
+
     const navBar = (
       <div className="container-fluid">
         <nav className="navbar navbar expand-expand-lg">
@@ -61,6 +62,7 @@ class Header extends React.Component {
           {pages}
           {category}
         </nav>
+
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -80,7 +82,9 @@ class Header extends React.Component {
         </Switch>
       </div>
     );
-    return <div>{navBar}</div>;
+    return (
+      <div> { navBar } </div>
+      );
   }
 }
 export default withRouter(Header);

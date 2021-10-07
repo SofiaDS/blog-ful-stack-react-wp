@@ -12,6 +12,15 @@ export class ArticleModel {
     this.link = link;
   }
 }
-export function objectToArt(article){
-  return new ArticleModel(article.id, article.date, article.img, article.title.rendered, article.excerpt.rendered, article.content.rendered, article.cat, article.link);
+export function objectToArt(article) {
+  return new ArticleModel(
+    article.id,
+    article.date,
+    article.img,
+    article.title.rendered,
+    article.excerpt.rendered,
+    article.content.rendered,
+    article.cat,
+    article.link
+  );
 }

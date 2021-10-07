@@ -1,7 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
-import { ArticleModel, objectToArt } from "../../models/articleModel.js";
 
 let isLoading = false;
 
@@ -25,7 +23,6 @@ class Pages extends React.Component {
         this.setState({
           pageContent: page,
         });
-        console.log(this.state.pageContent);
       });
   }
 

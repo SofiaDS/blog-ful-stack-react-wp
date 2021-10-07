@@ -10,9 +10,13 @@ import {
 export default class Footer extends React.Component {
   render() {
     const fb = <FontAwesomeIcon icon={faFacebookF} />;
+
     const ig = <FontAwesomeIcon icon={faInstagram} />;
+    
     const linkedin = <FontAwesomeIcon icon={faLinkedinIn} />;
+    
     const twitter = <FontAwesomeIcon icon={faTwitter} />;
+    
     return (
       <footer className="container-fluid">
         <address className="flex-parent">

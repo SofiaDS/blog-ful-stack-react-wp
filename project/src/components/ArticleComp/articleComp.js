@@ -18,6 +18,7 @@ export default class ArticleCom extends React.Component {
         this.setState({
           articles: articles.map((article) => objectToArt(article)),
         });
+
       });
   }
 
@@ -27,7 +28,7 @@ export default class ArticleCom extends React.Component {
         <div className="title"> { article.title } </div>
         <div
           className="preview"
-          dangerouslySetInnerHTML= {{ __html: article.content }} ></div>
+          dangerouslySetInnerHTML= {{ __html: article.excerpt }} ></div>
         <button type="button" className="btn btn-outline-dark">
           <Link to= {`/posts/${article.id}`} >Read More...</Link>
         </button>

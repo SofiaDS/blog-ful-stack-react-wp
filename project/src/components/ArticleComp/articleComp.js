@@ -18,22 +18,22 @@ export default class ArticleCom extends React.Component {
         this.setState({
           articles: articles.map((article) => objectToArt(article)),
         });
-
       });
   }
 
   render() {
     const card = this.state.articles.map((article) => (
-      <div className="cards " key= { article.id } >
-        <div className="title"> { article.title } </div>
+      <div className="cards " key={article.id}>
+        <div className="title"> {article.title} </div>
         <div
           className="preview"
-          dangerouslySetInnerHTML= {{ __html: article.excerpt }} ></div>
-        <button type="button" className="btn btn-outline-dark">
-          <Link to= {`/posts/${article.id}`} >Read More...</Link>
+          dangerouslySetInnerHTML={{ __html: article.excerpt }}
+        ></div>
+        <button type="button" className="button">
+          <Link to={`/posts/${article.id}`}>Read More...</Link>
         </button>
       </div>
     ));
-    return <div className="flex-parent"> { card } </div>;
+    return <div className="flex-parent backgroundC"> {card} </div>;
   }
 }

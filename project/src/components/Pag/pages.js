@@ -41,9 +41,15 @@ class Pages extends React.Component {
 
   render() {
     const cards = (
-      <div>
-        <h1>{this.state.pageContent?.title?.rendered}</h1>
-        <p dangerouslySetInnerHTML={{__html:this.state.pageContent?.content?.rendered}}></p>
+      <div className="flex-parent">
+        <div className="card">
+          <h1>{this.state.pageContent?.title?.rendered}</h1>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: this.state.pageContent?.content?.rendered,
+            }}
+          ></p>
+        </div>
       </div>
     );
     return <div> {cards}</div>;

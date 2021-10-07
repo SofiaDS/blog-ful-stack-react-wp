@@ -42,16 +42,16 @@ class DynSection extends React.Component {
 
   render() {
     const cards = this.state.catArt.map((article) => (
-      <div key={ article.id }>
-        <div>{ article.title }</div>
-        <div dangerouslySetInnerHTML= {{__html:article.content }}></div>
+      <div className ="cards" key={ article.id }>
+        <div className="title">{ article.title }</div>
+        <div className="preview" dangerouslySetInnerHTML= {{__html:article.content }}></div>
 
-        <button type="button" className="btn btn-outline-dark">
+        <button type="button" className="button">
           <Link to={`/posts/${article.id}`}>Read More...</Link>
         </button>
       </div>
     ));
-    return <div> {cards} </div>;
+    return <div className="flex-parent backgroundC"> {cards} </div>;
   }
 }
 
